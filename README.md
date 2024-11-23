@@ -1,5 +1,86 @@
-# PerformanzYonetim
-It was decided to build the management panel of the Performanz R&D and Software company. In this management panel, a web application will be developed that enables the employees of the company to follow up the stock information of the products, the interviewees, the information of the products sent, and the reasons for the failure of the discarded products. It was decided to develop this application using ASP.Net Core Multi-layer architecture and to use EF Core, which is the ORM tool for the database.
-Our layered architecture has been determined as Core, Repository and Service layers. Our Core layer was created in this layer, which is our most basic layer, in such a way that we have classes that concern the general class of the project. In this layer, our models, Dto objects and interfaces related to repository, service and UnitOfwork design pattern were created. Two design patterns were implemented in our project. These; Repository pattern and UniofWork design pattern. Our contracts for these design patterns are in the core layer. It was taken from this layer while the other layers were doing the operations. Repository layer referenced core layer. We thought of each as a class library. We have migrations in my repository layer. Thus, easy access to the database was provided. In this way, when a change occurs in the repositorty layer, it is reflected to the database by means of the migration file. Our seed data is included here to ensure that the default data is transferred to the database while creating the first migration. Layers were created in such a way that each of our layers does not do any other operation to do the work related to it. Our Service layer included business-related codes.
-These are the files that we will use when we want to map our entities obtained by using mapping to any dto object or any class in the project. The automapper library is used in the project. The service implementation, in which the interface in the core is determined, is carried out in the service layer. Our validation and excepsions are kept in the service layer that concerns the work. Three class libraries are provided to use an api application. Our web application has been provided to communicate directly with the API.
+# 📊 Management Panel API
+
+The **Management Panel API** is a web application designed for **Performanz R&D and Software Company**. The purpose of this project is to enable employees to manage and track product stock information, interview records, details of dispatched products, and reasons for the failure of discarded products. The application is built using **ASP.Net Core Multi-layer architecture** with **Entity Framework Core (EF Core)** as the ORM tool.
+
+---
+
+## 🛠️ Architecture Overview
+
+### **Layered Architecture**
+1. **Core Layer**:
+   - The foundation layer of the project.
+   - Contains:
+     - **Models**: Represent the database entities.
+     - **DTO Objects**: Data Transfer Objects for communication.
+     - **Interfaces**: Contracts for repository, service, and UnitOfWork design patterns.
+   - This layer defines the abstractions used by other layers.
+
+2. **Repository Layer**:
+   - Handles database operations.
+   - Includes:
+     - **Migrations**: To manage schema changes and apply them to the database.
+     - **Seed Data**: Ensures default data is inserted during the initial migration.
+   - Implements the **Repository Design Pattern**.
+
+3. **Service Layer**:
+   - Contains business logic and application services.
+   - Includes:
+     - **Mapping**: Maps entities to DTOs using the **AutoMapper** library.
+     - **Validation**: Ensures data integrity.
+     - **Exception Handling**: Manages application-specific exceptions.
+   - Implements the **UnitOfWork Design Pattern**.
+
+4. **API Layer**:
+   - Exposes RESTful endpoints for the web application.
+   - Directly communicates with the **Service Layer** to fulfill client requests.
+
+---
+
+## 🧩 Key Features
+
+- **🔐 Authentication and Authorization**:
+  - Secure login for employees.
+  - Role-based access to resources.
+
+- **📦 Stock Management**:
+  - Track product stocks.
+  - Manage inventory changes.
+
+- **📋 Interview Management**:
+  - Record and track interviewee details.
+
+- **🚚 Product Tracking**:
+  - Monitor dispatched products.
+  - Record reasons for failed or discarded products.
+
+- **📂 Multi-layered Design**:
+  - Core, Repository, and Service layers ensure clean architecture and separation of concerns.
+
+- **🔄 Database Integration**:
+  - Built with EF Core for seamless database interaction.
+  - Migrations for schema updates.
+
+---
+
+## 🚀 Technologies Used
+
+- **Framework**: ASP.Net Core
+- **ORM Tool**: Entity Framework Core (EF Core)
+- **Mapping**: AutoMapper Library
+- **Design Patterns**:
+  - Repository Pattern
+  - UnitOfWork Pattern
+- **Database**: SQL Server
+- **Language**: C#
+- **API Testing**: Postman
+
+---
+
+## 🛠️ Installation & Setup
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Sarizeybekk/ManagementPanelApi.git
+   cd ManagementPanelApi
+
 ![image](https://user-images.githubusercontent.com/85437211/196987703-c3335166-b834-4746-8763-99c0ec6f0562.png)
